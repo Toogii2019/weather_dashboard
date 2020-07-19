@@ -1,0 +1,57 @@
+body {
+    
+}
+
+#my-navbar {
+    text-align: center;
+}
+
+.main-container {
+    display: grid;
+    gap: 30px;
+    grid-template-rows: 50px 1fr 50px;
+}
+
+.row {
+    display: grid;
+    grid-gap: 30px;
+    margin-right: 30px;
+    grid-template-areas: 
+            'searchbox city-info'
+            'searchbox weather-board';
+}
+.searchbox {
+    grid-area: searchbox;
+
+}
+.city-info {
+    grid-area: city-info;
+    width: 70vw;
+    padding:20px;
+    box-shadow: 5px;
+    border: 1px solid;
+    height: 400px;
+}
+
+.weather-board {
+    grid-area: weather-board;
+    padding:20px;
+    box-shadow: 5px;
+    border: 1px solid;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.day {
+    border: 1px solid;
+    width: 200px;
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
