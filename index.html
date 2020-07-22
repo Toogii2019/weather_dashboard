@@ -20,15 +20,40 @@
             <div class="header">
                 WEATHER DASHBOARD
             </div>
-            <div class="content-large">Content #1a</div>
+            <div class="content-large">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body" id="city-name-large" style="text-align: center;">
+                        <h5 class="card-title" id="city-name-large">Atlanta (2020-07-23)</h5>
+                        <!-- <p class="card-text">Weather information</p> -->
+                    </div>
+                    <img class="card-img-top" src="http://openweathermap.org/img/wn/04d.png" alt="Card image cap" style="width: 50px;height: 50px; margin:auto; background: rgb(120, 120, 143)">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Temperature</li>
+                        <li class="list-group-item">Humidity</li>
+                        <li class="list-group-item">Wind Speed</li>
+                        <li class="list-group-item">UV Index</li>
+                    </ul>
+                </div>
+            </div>
             <!-- <div class="content-large">Content #1b</div> -->
-            <div class="content-small">Content #2a</div>
+            <div class="content-small">
+                <form class="form-inline mr-auto">
+                    <input class="form-control mr-sm-2" id="search-button" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>
+                </form>
+                <div class="card" id="search-history" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item search-item">Seattle</li>
+                    <li class="list-group-item search-item">Ulaanbaatar</li>
+                    <li class="list-group-item search-item">Vestibulum at eros</li>
+                </ul>
+                </div>
+            </div>
             <!-- <div class="content-small">Content #2b</div> -->
             <div class="content-smaller">Content #3a</div>
             <div class="content-smaller">Content #3b</div>
             <div class="content-smaller">Content #3c</div>
             <div class="content-smaller">Content #3d</div>
-            <div class="content-smaller">Content #3e</div>
 
             <div class="content-footer">Toogii &copy 2020</div>
         </div>

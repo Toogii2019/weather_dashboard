@@ -47,4 +47,11 @@
 
     // Log the resulting object
     console.log(response);
-})})
+}
+) 
+  $("#search-button").on("click", function(event) {
+    event.preventDefault();
+    console.log("test");
+  })
+
+})

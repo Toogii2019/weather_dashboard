@@ -52,14 +52,14 @@ body {
 
 .content-large {
     grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 5;
 }
 
 .content-small {
     grid-row-start: 2;
-    grid-row-end: 4
+    grid-row-end: 5
 
 }
 
@@ -69,4 +69,24 @@ body {
     text-align: center;
     background-color: var(--dark);
     color: white;
+}
+
+#search-history {
+    border: none;
+}
+
+.search-item {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#city-name-large {
+    border: none;
+}
+
+.content-smaller {
+    grid-row-start: 3;
+    grid-row-end: 5
+
 }
