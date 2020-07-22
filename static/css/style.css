@@ -1,62 +1,72 @@
-body {
-    
+:root {
+    --primary: #ddd;
+    --dark: rgb(116, 106, 106);
+    --light: rgb(243, 234, 234);
+    --light-blue: rgb(169, 222, 222);
+    --black: rgb(74, 82, 82);
+    --shadow: 10px 5px 10px rgba(43, 42, 42, 0.8);
+    --title-color: rgb(135, 125, 116);
+    --light-dark: rgb(223, 215, 215);
+    --question-color:  rgb(248, 217, 190);
 }
 
-#my-navbar {
-    text-align: center;
+
+body {
+    width: 100vw;
+    height: 100vh;
 }
+
 
 .main-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
     display: grid;
-    gap: 30px;
-    grid-template-rows: 50px 1fr 50px;
-}
-
-.row {
-    display: grid;
-    grid-gap: 30px;
-    margin-right: 30px;
-    grid-template-areas: 
-            'searchbox city-info'
-            'searchbox weather-board';
-}
-.searchbox {
-    grid-area: searchbox;
-
-}
-.city-info {
-    grid-area: city-info;
-    width: 70vw;
-    padding:20px;
-    box-shadow: 5px;
-    /* border: 1px solid; */
-    height: 400px;
-}
-
-.weather-board {
-    grid-area: weather-board;
-    padding:20px;
-    box-shadow: 5px;
-    /* border: 1px solid; */
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.day {
-    border: 1px solid;
-    width: 10vw;
-    height: 15vw;
-    background: rgb(107, 107, 214);
-    color: white;
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 1fr 1fr 100px; */
+    grid-template: 50px 1fr 1fr 100px / repeat(5, 1fr);
+    grid-gap: 10px;
     padding: 10px;
-    flex-shrink: 1;
+    box-sizing: border-box;
 }
 
-footer {
-    background: black;
-    color: white;
+.container div {
+    border: 1px solid;
+    padding: 10px;
+
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 6;
     text-align: center;
-    margin-bottom: 5px;
+    background-color: var(--light-blue);
+}
+
+.content-large {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.content-small {
+    grid-row-start: 2;
+    grid-row-end: 4
+
+}
+
+.content-footer {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    text-align: center;
+    background-color: var(--dark);
+    color: white;
 }
