@@ -35,30 +35,30 @@
     // Here we run our AJAX call to the OpenWeatherMap API
   
   var searchArray = [];
-  var iconCode = "04d";
+  var iconCode;
   var date;
 
   function updateSmallScreen(weatherObj) {
-    for (i=0;i<5;i++) {
+    for (i=0;i<4;i++) {
       let dateUnix = weatherObj.list[i+1].dt;
-      getNormalDate(dateUnix, i);
+      getNormalDate(dateUnix, i+1);
       let iconLink = "http://openweathermap.org/img/wn/" + weatherObj.list[i+1].weather[0].icon + ".png";
       // $("div.day-1 > div#small-date").text(date);
       $(`div.day-${i+1} > img#small-weather-icon`).attr("src", iconLink);
+      console.log(`day-${i+1} ${iconLink}`);
       $(`div.day-${i+1} > div#small-temp`).text("Temp: " + Math.round((weatherObj.list[i+1].temp.day - 273.15)*9/5 + 32) + " F");
       $(`div.day-${i+1} > div#small-humidity`).text("Humidity: " + weatherObj.list[i+1].humidity);
     }
   }
 
   function get5DayForeCast(cityName) {
-    var queryUrl1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=${APIKey}`
+    var queryUrl1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=7&appid=${APIKey}`
     
     $.ajax({
       url: queryUrl1,
       method: "GET"
       })
       .then(function(response1) {
-        
         updateSmallScreen(response1);
 
       })
@@ -67,7 +67,6 @@
 
   function getNormalDate(dateUnix, index) {
     var queryUrl1 = `https://showcase.api.linx.twenty57.net/UnixTime/fromunixtimestamp?unixtimestamp=${dateUnix}`;
-
     $.ajax({
       url: queryUrl1,
       method: "GET"
@@ -76,7 +75,7 @@
         
         console.log(response1.Datetime);
         date = response1.Datetime.split(" ")[0];
-        $(`div.day-${index + 1} > div#small-date`).text(date);
+        $(`div.day-${index} > div#small-date`).text(date);
       })
   }
 
