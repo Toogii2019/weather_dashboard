@@ -1,35 +1,5 @@
-// function getUsersLocation() {
-
-//     const status = document.querySelector('#status');
-//     const mapLink = document.querySelector('#map-link');
-  
-//     mapLink.href = '';
-//     mapLink.textContent = '';
-  
-//     function success(position) {
-//       const latitude  = position.coords.latitude;
-//       const longitude = position.coords.longitude;
-  
-//       status.textContent = '';
-//       mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-//       mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-//     }
-  
-//     function error() {
-//       status.textContent = 'Unable to retrieve your location';
-//     }
-  
-//     if(!navigator.geolocation) {
-//       status.textContent = 'Geolocation is not supported by your browser';
-//     } else {
-//       status.textContent = 'Locating…';
-//       navigator.geolocation.getCurrentPosition(success, error);
-//     }
-  
-//   }
-
-  $("document").ready(function() {
-    var APIKey = "166a433c57516f51dfab1f7edaed8413";
+$("document").ready(function() {
+  var APIKey = "166a433c57516f51dfab1f7edaed8413";
     // Here we are building the URL we need to query the database
     // var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=Bujumbura,Burundi&appid=" + APIKey;
     // Here we run our AJAX call to the OpenWeatherMap API
@@ -39,18 +9,15 @@
   var date;
 
   getLocation()
-  var x = document.getElementById("demo");
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(parsePosition);
     } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
+      alert("Geolocation is not supported by your browser!!");
     }
   } 
 
   function parsePosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
     let cityName = null;
     getCurrentWeather(cityName, position.coords.latitude, position.coords.longitude );
     
@@ -64,7 +31,6 @@
       let dateUnix = weatherObj.list[i+1].dt;
       getNormalDate(dateUnix, i+1);
       let iconLink = "http://openweathermap.org/img/wn/" + weatherObj.list[i+1].weather[0].icon + ".png";
-      // $("div.day-1 > div#small-date").text(date);
       $(`div.day-${i+1} > img#small-weather-icon`).attr("src", iconLink);
       console.log(`day-${i+1} ${iconLink}`);
       $(`div.day-${i+1} > div#small-temp`).text("Temp: " + Math.round((weatherObj.list[i+1].temp.day - 273.15)*9/5 + 32) + " F");
@@ -105,10 +71,6 @@
       })
   }
 
-
-  // function get5DayForeCast(cityName) {
-  //   var 
-  // }
   var uvIndex = 0;
   function updateBigScreen(weatherObj) {
     let date = new Date();
@@ -151,7 +113,6 @@
       }
     }
     else {
-    // var queryURL1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&appid=${APIKey}`;
       var queryURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`;
     }
     $.ajax({
