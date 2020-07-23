@@ -78,6 +78,9 @@ body {
     font-weight: normal;
 }
 
+.search-item:hover {
+    background: var(--dark);
+}
 
 .content-smaller {
     grid-row-start: 3;
@@ -125,3 +128,4 @@ body {
 .day-4 {
     grid-area: day-4;   
 }
+
