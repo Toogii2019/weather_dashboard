@@ -122,24 +122,29 @@ $("document").ready(function() {
       localStorage.setItem("last-searched", cityName);
     
     }
-    $.ajax({
-    url: queryURL1,
-    method: "GET"
-    })
-    .then(function(response1) {
-
-    getUvIndex(response1.coord.lat, response1.coord.lon);
-
-    updateBigScreen(response1, uvIndex);
-    if (cityName) {
-      get5DayForeCast(cityName);
+    try {
+      $.ajax({
+      url: queryURL1,
+      method: "GET"
+      })
+      .then(function(response1) {
+      
+      getUvIndex(response1.coord.lat, response1.coord.lon);
+      
+      updateBigScreen(response1, uvIndex);
+      if (cityName) {
+        get5DayForeCast(cityName);
+      }
+      else {
+        get5DayForeCast(cityName, lat, lon);
+          }
+        }
+      )
     }
-    else {
-      get5DayForeCast(cityName, lat, lon);
+    catch(err) {
+      return;
     }
 
-  }
-  )
 
   }
 

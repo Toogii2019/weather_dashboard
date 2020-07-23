@@ -155,12 +155,40 @@ body {
     .big-screen {
         width: 400px; 
     }
-
+    .content-small {
+        width: 500px;
+    }
+    #search-list {
+        width: 350px;
+    }
+    #search-history {
+        width: 380px;
+    }
+    #search-input {
+        width: 380px;
+    }
     .container {
         grid-template: 50px 1fr 1fr 100px / repeat(2, 1fr);
     }
 }
 
+@media(max-width: 994px) {
+    .big-screen {
+        width:330px; 
+    }
+    .content-small {
+        width: 350px;
+    }
+    #search-list {
+        width: 300px
+    }
+    #search-history {
+        width: 330px
+    }
+    #search-input {
+        width: 230px;
+    }
+}
 
 
 @media(max-width: 768px) {
@@ -176,9 +204,9 @@ body {
     #search-history {
         width: 200px;
     }
-    /* #search-input {
-        width: 130px;
-    } */
+    #search-input {
+        width: 120px;
+    }
 }
 
 @media(max-width: 534px) {
@@ -201,6 +229,30 @@ body {
         width: 150px;
     }
 }
+@media(max-width: 535px) {
+    .big-screen {
+        width:160px; 
+        font-size: 15px;
+    }
+    .weather-icon { 
+        width: 130px;
+        height: 200px;
+    }
+    .content-small {
+        width: 170px;
+    }
+    #search-list {
+        width: 130px;
+    }
+    #search-history {
+        width: 150px;
+    }
+    #search-input {
+        width: 150px;
+    }
+}
+
+
 
 
 @media(max-width: 380px) {
