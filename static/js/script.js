@@ -7,9 +7,14 @@ $("document").ready(function() {
   var searchArray = [];
   var iconCode;
   var date;
-
+  var lastSearched;
   getLocation()
   function getLocation() {
+    if (localStorage.getItem("last-searched")) {
+      getCurrentWeather(localStorage.getItem("last-searched"));
+      return;
+    }
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(parsePosition);
     } else {
@@ -114,6 +119,8 @@ $("document").ready(function() {
     }
     else {
       var queryURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`;
+      localStorage.setItem("last-searched", cityName);
+    
     }
     $.ajax({
     url: queryURL1,
@@ -141,6 +148,14 @@ $("document").ready(function() {
     if (!cityName) {
       return null;
     }
+    lastSearched = cityName;
+    localStorage.setItem("last-searched", cityName);
+    if (!searchArray) {
+      searchArray = [];
+      searchArray.push(cityName);
+      localStorage.setItem("search-history", JSON.stringify(searchArray));
+      return;
+    }
     if (!searchArray.includes(cityName)) {
       searchArray.push(cityName);
       localStorage.setItem("search-history", JSON.stringify(searchArray));
@@ -151,10 +166,12 @@ $("document").ready(function() {
   function updateSearchHistory() {
     searchArray = JSON.parse(localStorage.getItem("search-history"));
     $(".search-list").empty();
+    if (searchArray) {
     searchArray.forEach(function(item, index) {
       $(".search-list").prepend($("<li class='list-group-item search-item'>").text(item));
       }
-    ) 
+    )
+    } 
   }
 
   function getInputFromSearch() {
