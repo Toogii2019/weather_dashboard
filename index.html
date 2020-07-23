@@ -15,69 +15,67 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <div class="main-container">
-        <div class="container">
-            <div class="header">
-                WEATHER DASHBOARD
-            </div>
-            <div class="content-large main-card">
-                <div class="card big-screen" id="big-screen">
-                    <img class="card-img-top weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 250px;height: 200px; margin:auto; background: rgb(64, 64, 163); margin-top: 100px;" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title" id="city-name-large" style="font-weight: bold; text-align: center;">City...</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="desc" style="font-weight: bold;">....</li>
-
-                        <li class="list-group-item" id="temp" style="font-weight: normal;">....</li>
-                        <li class="list-group-item" id="humid" style="font-weight: normal;">....</li>
-                        <li class="list-group-item" id="speed" style="font-weight: normal;">....</li>
-                        <li class="list-group-item" id="uv-index" style="font-weight: normal;">....</li>
-                    </ul>
-                </div>
-                
-                <div class="content-smaller day-1">
-                    <div id="small-date" style="font-size: 15px;">....</div>
-                    <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
-                    <div id="small-temp" style="font-size: 15px;">....</div>
-                    <div id="small-humidity" style="font-size: 15px;">....</div>
-                </div>
-                <div class="content-smaller day-2">
-                    <div id="small-date" style="font-size: 15px;">....</div>
-                    <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
-                    <div id="small-temp" style="font-size: 15px;">....</div>
-                    <div id="small-humidity" style="font-size: 15px;">....</div>
-                </div>
-                <div class="content-smaller day-3">
-                    <div id="small-date" style="font-size: 15px;">....</div>
-                    <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
-                    <div id="small-temp" style="font-size: 15px;">....</div>
-                    <div id="small-humidity" style="font-size: 15px;">....</div>
-                </div>
-                <div class="content-smaller day-4">
-                    <div id="small-date" style="font-size: 15px;">....</div>
-                    <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
-                    <div id="small-temp" style="font-size: 15px;">....</div>
-                    <div id="small-humidity" style="font-size: 15px;">....</div>
-                </div>
-            </div>
-            <div class="content-small">
-                <form class="form-inline mr-auto">
-                    <input class="form-control mr-sm-2" id="search-input" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-unique btn-rounded btn-sm my-0" id="search-button" type="submit">Search</button>
-                </form>
-                <div class="card" id="search-history" style="width: 18rem;">
-                <ul class="list-group list-group-flush search-list">
-                    <li class="list-group-item search-item">....</li>
-                    <li class="list-group-item search-item">....</li>
-                    <li class="list-group-item search-item">....</li>
-                </ul>
-                </div>
-            </div>
-
-
-            <div class="content-footer">Toogii &copy 2020</div>
+    <div class="container">
+        <div class="header">
+            WEATHER DASHBOARD
         </div>
+        <div class="content-large main-card">
+            <div class="card big-screen" id="big-screen">
+                <img class="card-img-top weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 250px;height: 200px; margin:auto; background: rgb(64, 64, 163); margin-top: 100px;" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="city-name-large" style="font-weight: bold; text-align: center;">City...</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="desc" style="font-weight: bold;">....</li>
+
+                    <li class="list-group-item" id="temp" style="font-weight: normal;">....</li>
+                    <li class="list-group-item" id="humid" style="font-weight: normal;">....</li>
+                    <li class="list-group-item" id="speed" style="font-weight: normal;">....</li>
+                    <li class="list-group-item" id="uv-index" style="font-weight: normal;">....</li>
+                </ul>
+            </div>
+            
+            <div class="content-smaller day-1">
+                <div id="small-date" style="font-size: 15px;">....</div>
+                <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
+                <div id="small-temp" style="font-size: 15px;">....</div>
+                <div id="small-humidity" style="font-size: 15px;">....</div>
+            </div>
+            <div class="content-smaller day-2">
+                <div id="small-date" style="font-size: 15px;">....</div>
+                <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
+                <div id="small-temp" style="font-size: 15px;">....</div>
+                <div id="small-humidity" style="font-size: 15px;">....</div>
+            </div>
+            <div class="content-smaller day-3">
+                <div id="small-date" style="font-size: 15px;">....</div>
+                <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
+                <div id="small-temp" style="font-size: 15px;">....</div>
+                <div id="small-humidity" style="font-size: 15px;">....</div>
+            </div>
+            <div class="content-smaller day-4">
+                <div id="small-date" style="font-size: 15px;">....</div>
+                <img class="small-weather-icon" id="small-weather-icon" src="http://openweathermap.org/img/wn/04d@2x.png" style="width: 40px; height: 40px; background: rgb(64, 64, 163); text-align: center;" alt="Card image cap">
+                <div id="small-temp" style="font-size: 15px;">....</div>
+                <div id="small-humidity" style="font-size: 15px;">....</div>
+            </div>
+        </div>
+        <div class="content-small">
+            <form class="form-inline mr-auto">
+                <input class="form-control mr-sm-2" id="search-input" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-unique btn-rounded btn-sm my-0" id="search-button" type="submit">Search</button>
+            </form>
+            <div class="card" id="search-history">
+            <ul class="list-group list-group-flush search-list" id="search-list">
+                <li class="list-group-item search-item">....</li>
+                <li class="list-group-item search-item">....</li>
+                <li class="list-group-item search-item">....</li>
+            </ul>
+            </div>
+        </div>
+
+
+        <div class="content-footer">Toogii &copy 2020</div>
     </div>
 </body>
 </html>
