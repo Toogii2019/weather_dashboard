@@ -143,16 +143,20 @@
     if (!cityName) {
       return null;
     }
-    searchArray.push(cityName);
-    localStorage.setItem("search-history", searchArray);
+    if (!searchArray.includes(cityName)) {
+      searchArray.push(cityName);
+      localStorage.setItem("search-history", JSON.stringify(searchArray));
+    }
   }
 
 
-  function updateSearchHistory(cityName) {
-    if (!cityName) {
-      return null;
-    }
-    $(".search-list").prepend($("<li class='list-group-item search-item'>").text(cityName));
+  function updateSearchHistory() {
+    searchArray = JSON.parse(localStorage.getItem("search-history"));
+    $(".search-list").empty();
+    searchArray.forEach(function(item, index) {
+      $(".search-list").prepend($("<li class='list-group-item search-item'>").text(item));
+      }
+    ) 
   }
 
   function getInputFromSearch() {
@@ -164,6 +168,8 @@
       return null;
     }    
   }
+
+  updateSearchHistory();
 
 
   $("#search-button").on("click", function(event) {
