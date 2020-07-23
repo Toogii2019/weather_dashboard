@@ -88,7 +88,7 @@ body {
     grid-row-end: 5;
     text-align: center;
     width: auto;
-    height: 250px;
+    height: auto;
     background: rgb(146, 146, 223);
     color: white;
     box-shadow: var(--shadow);
@@ -111,8 +111,12 @@ body {
 
 .big-screen {
     grid-area: big-screen; 
-    box-shadow: var(--shadow);  
+    box-shadow: var(--shadow);
+    width: 30rem; 
+    padding: 55px;  
+
 }
+
 
 .day-1 {
     grid-area: day-1;   
@@ -130,3 +134,23 @@ body {
     grid-area: day-4;   
 }
 
+@media(max-width: 1200px) {
+    .main-card {
+        grid-template-areas:
+            'big-screen big-screen'
+            'day-1 day-2'
+            'day-3 day-4';
+    }
+    .big-screen {
+        width: 38rem; 
+    }
+}
+
+@media(max-width: 990px) {
+    .content-small {
+        display: none;
+    }
+    .header {
+        text-align: left;
+    }
+}
