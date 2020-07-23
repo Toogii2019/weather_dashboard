@@ -38,6 +38,27 @@
   var iconCode;
   var date;
 
+  getLocation()
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(parsePosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  } 
+
+  function parsePosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+    let cityName = null;
+    getCurrentWeather(cityName, position.coords.latitude, position.coords.longitude );
+    
+
+  }
+
+
+
   function updateSmallScreen(weatherObj) {
     for (i=0;i<4;i++) {
       let dateUnix = weatherObj.list[i+1].dt;
@@ -51,9 +72,14 @@
     }
   }
 
-  function get5DayForeCast(cityName) {
-    var queryUrl1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=7&appid=${APIKey}`
-    
+  function get5DayForeCast(cityName, lat, lon) {
+    if (!cityName) {
+      var queryUrl1 = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=7&appid=${APIKey}`
+
+    }
+    else {
+      var queryUrl1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=7&appid=${APIKey}`
+    }
     $.ajax({
       url: queryUrl1,
       method: "GET"
@@ -115,22 +141,34 @@
   }
 
 
-  function getCurrentWeather(cityName) {
+  function getCurrentWeather(cityName, lat,lon) {
     if (!cityName) {
-      return null;
+      if (!lat || !lon) {
+        return null;
+      }
+      else {
+      var queryURL1 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+      }
     }
+    else {
     // var queryURL1 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&appid=${APIKey}`;
-    var queryURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`;
+      var queryURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`;
+    }
     $.ajax({
-      url: queryURL1,
-      method: "GET"
-      })
-      .then(function(response1) {
-  
-      getUvIndex(response1.coord.lat, response1.coord.lon);
+    url: queryURL1,
+    method: "GET"
+    })
+    .then(function(response1) {
 
-      updateBigScreen(response1, uvIndex);
+    getUvIndex(response1.coord.lat, response1.coord.lon);
+
+    updateBigScreen(response1, uvIndex);
+    if (cityName) {
       get5DayForeCast(cityName);
+    }
+    else {
+      get5DayForeCast(cityName, lat, lon);
+    }
 
   }
   )
@@ -176,7 +214,7 @@
     let cityName = getInputFromSearch().trim();
     updateLocalStorage(cityName);
     updateSearchHistory(cityName);
-    let weatherObj = getCurrentWeather(cityName); 
+    getCurrentWeather(cityName); 
   })
 
 
