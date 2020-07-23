@@ -4,7 +4,7 @@
     --light: rgb(243, 234, 234);
     --light-blue: rgb(169, 222, 222);
     --black: rgb(74, 82, 82);
-    --shadow: 4px 5px 10px rgba(43, 42, 42, 0.8);
+    --shadow: 1px 3px 5px rgba(43, 42, 42, 0.8);
     --title-color: rgb(135, 125, 116);
     --light-dark: rgb(223, 215, 215);
     --question-color:  rgb(248, 217, 190);
@@ -49,6 +49,7 @@ body {
     grid-column-end: 6;
     text-align: center;
     background-color: var(--light-blue);
+    box-shadow: var(--shadow);
 }
 
 .content-large {
