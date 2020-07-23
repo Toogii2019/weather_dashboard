@@ -4,7 +4,7 @@
     --light: rgb(243, 234, 234);
     --light-blue: rgb(169, 222, 222);
     --black: rgb(74, 82, 82);
-    --shadow: 10px 5px 10px rgba(43, 42, 42, 0.8);
+    --shadow: 4px 5px 10px rgba(43, 42, 42, 0.8);
     --title-color: rgb(135, 125, 116);
     --light-dark: rgb(223, 215, 215);
     --question-color:  rgb(248, 217, 190);
@@ -38,7 +38,7 @@ body {
 }
 
 .container div {
-    border: 1px solid;
+    /* border: 1px dashed; */
     padding: 10px;
 
 }
@@ -52,14 +52,15 @@ body {
 
 .content-large {
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 5;
 }
 
 .content-small {
     grid-row-start: 2;
-    grid-row-end: 5
+    grid-row-end: 5;
+    box-shadow: var(--shadow);
 
 }
 
@@ -71,22 +72,56 @@ body {
     color: white;
 }
 
-#search-history {
-    border: none;
-}
-
 .search-item {
     font-family: sans-serif;
     font-size: 15px;
     font-weight: normal;
 }
 
-#city-name-large {
-    border: none;
-}
 
 .content-smaller {
     grid-row-start: 3;
-    grid-row-end: 5
+    grid-row-end: 5;
+    text-align: center;
+    width: auto;
+    height: 250px;
+    background: rgb(146, 146, 223);
+    color: white;
+    box-shadow: var(--shadow);
 
+}
+
+
+.list-group-flush {
+    margin-top: 15px;
+}
+
+
+.main-card {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+            'big-screen day-1 day-2'
+            'big-screen day-3 day-4';
+}
+
+.big-screen {
+    grid-area: big-screen; 
+    box-shadow: var(--shadow);  
+}
+
+.day-1 {
+    grid-area: day-1;   
+}
+
+.day-2 {
+    grid-area: day-2;   
+}
+
+.day-3 {
+    grid-area: day-3;   
+}
+
+.day-4 {
+    grid-area: day-4;   
 }
