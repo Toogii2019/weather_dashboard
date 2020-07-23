@@ -137,7 +137,13 @@ body {
 .day-4 {
     grid-area: day-4;   
 }
-
+.weather-icon {
+    width: 250px;
+    height: 200px; 
+    margin:auto; 
+    background: rgb(64, 64, 163); 
+    margin-top: 100px;
+}
 @media(max-width: 1200px) {
     .main-card {
         grid-template-areas:
@@ -154,12 +160,34 @@ body {
     }
 }
 
+
+
 @media(max-width: 768px) {
     .big-screen {
         width:270px; 
     }
     .content-small {
         width: 230px;
+    }
+    #search-list {
+        width: 180px;
+    }
+    #search-history {
+        width: 200px;
+    }
+}
+
+@media(max-width: 535px) {
+    .big-screen {
+        width:200px; 
+        font-size: 15px;
+    }
+    .weather-icon { 
+        width: 180px;
+        height: 200px;
+    }
+    .content-small {
+        width: 200px;
     }
     #search-list {
         width: 180px;
