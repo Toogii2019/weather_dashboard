@@ -113,7 +113,7 @@ body {
     grid-area: big-screen; 
     box-shadow: var(--shadow);
     width: 30rem; 
-    padding: 55px;  
+    padding: 10px;  
 
 }
 
@@ -148,7 +148,8 @@ body {
 
 @media(max-width: 990px) {
     .content-small {
-        display: none;
+        width: 0;
+        height: 0;
     }
     .header {
         text-align: left;
