@@ -35,7 +35,7 @@ $("document").ready(function() {
     for (i=0;i<4;i++) {
       let dateUnix = weatherObj.list[i+1].dt;
       getNormalDate(dateUnix, i+1);
-      let iconLink = "http://openweathermap.org/img/wn/" + weatherObj.list[i+1].weather[0].icon + ".png";
+      let iconLink = "https://openweathermap.org/img/wn/" + weatherObj.list[i+1].weather[0].icon + ".png";
       $(`div.day-${i+1} > img#small-weather-icon`).attr("src", iconLink);
       console.log(`day-${i+1} ${iconLink}`);
       $(`div.day-${i+1} > div#small-temp`).text("Temp: " + Math.round((weatherObj.list[i+1].temp.day - 273.15)*9/5 + 32) + " F");
@@ -79,7 +79,7 @@ $("document").ready(function() {
   var uvIndex = 0;
   function updateBigScreen(weatherObj) {
     let date = new Date();
-    var iconLink = "http://openweathermap.org/img/wn/" + weatherObj.weather[0].icon + ".png";
+    var iconLink = "https://openweathermap.org/img/wn/" + weatherObj.weather[0].icon + ".png";
 
     $("#city-name-large").text(weatherObj.name + " (" + date.toDateString() + ")");
     $(".weather-icon").attr("src",iconLink);
@@ -142,6 +142,7 @@ $("document").ready(function() {
       )
     }
     catch(err) {
+      console.log(err);
       return;
     }
 
