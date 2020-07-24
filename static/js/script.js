@@ -89,7 +89,7 @@ $("document").ready(function() {
     $("#desc").text("Condition:  " + weatherObj.weather[0].description);
  }
   function getUvIndex(lat, lon) {
-    var queryURL2 = `http://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
+    var queryURL2 = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
 
     $.ajax({
       url: queryURL2,
