@@ -17,7 +17,7 @@ git push
 
 Go to https://github.com/Toogii2019/weather_dashboard/pulls and create New Pull Request for your changes.
 
-#### Review
+#### Likns
 
 * The URL of the deployed application.
 
