@@ -19,8 +19,6 @@ Go to https://github.com/Toogii2019/weather_dashboard/pulls and create New Pull 
 
 #### Review
 
-The following is submitted for review:
-
 * The URL of the deployed application.
 
 https://toogii2019.github.io/weather_dashboard/
